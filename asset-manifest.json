@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/luckydory/static/css/main.49fba454.css",
-    "main.js": "/luckydory/static/js/main.394b8d9c.js",
+    "main.js": "/luckydory/static/js/main.da5b1cda.js",
     "index.html": "/luckydory/index.html",
     "main.49fba454.css.map": "/luckydory/static/css/main.49fba454.css.map",
-    "main.394b8d9c.js.map": "/luckydory/static/js/main.394b8d9c.js.map"
+    "main.da5b1cda.js.map": "/luckydory/static/js/main.da5b1cda.js.map"
   },
   "entrypoints": [
     "static/css/main.49fba454.css",
-    "static/js/main.394b8d9c.js"
+    "static/js/main.da5b1cda.js"
   ]
 }
