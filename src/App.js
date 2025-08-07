@@ -15,36 +15,26 @@ import Foot from "./components/Foot";
 const App = () => {
   const [cart, setCart] = useState([]);
   //장바구니에 리스트 추가
-  //cart에 id가 있는지 없는지 확인
-  //id가 있으면 count 값을 1씩 증가
-  //id가 없으면 count:1로 설정
   const handleAddToCart = (item) => {
-    // setCart((prev) => {
-    //   return [...prev, item];
-    // });
     setCart((prev) => {
-      const temp = prev.find((i) => { return i.id === item.id });
+      const temp = prev.find((i) => i.id === item.id);
       let newItem = null;
       if (temp) {
-        //id가 똑같은 item을 찾았을 때
-        newItem = prev.map((j) => {
-          return j.id === item.id ? { ...j, count: j.count + 1 } : j
-        });
+        newItem = prev.map((j) => (j.id === item.id ? { ...j, count: j.count + 1 } : j));
       } else {
-        //id가 똑같은게 없을 때
         newItem = [...prev, { ...item, count: 1 }];
       }
       return newItem;
     });
-  }
+  };
+
   //cart item 삭제
   const handleDeleteCart = (id) => {
-    setCart((prev) => {
-      return prev.filter((item) => { return item.id !== id })
-    });
-  }
+    setCart((prev) => prev.filter((item) => item.id !== id));
+  };
+
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/luckydory">
       <div id="App">
         <Head />
         <Routes>
@@ -63,10 +53,7 @@ const App = () => {
               </>
             }
           />
-          <Route
-            path="/cart"
-            element={<CartPage cart={cart} onDelete={handleDeleteCart} />}
-          />
+          <Route path="/cart" element={<CartPage cart={cart} onDelete={handleDeleteCart} />} />
         </Routes>
       </div>
     </BrowserRouter>
