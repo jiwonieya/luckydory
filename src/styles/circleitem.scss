@@ -1,0 +1,17 @@
+#circle{
+    margin: 3rem 0;
+    text-align: center;
+    *{margin: 5px 0;}
+    h2{
+        display: inline-block;
+        @include btn-style(var(--color-sub2));
+    }
+    ul{
+        @include flex-layout();
+        flex-wrap: wrap;
+        img{
+            width: 60%;
+        }
+        gap: 10px;
+    }
+}

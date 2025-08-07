@@ -1,0 +1,68 @@
+footer {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "one"
+    "two"
+    "three"
+    "four";
+  gap: 1rem;
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "one one"
+      "two three"
+      "four four";
+  }
+  @include desktop {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "one one one"
+      "two three four";
+  }
+  button {
+    width: 100%;
+    display: block;
+    text-align: left;
+    background: none;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid var(--color-dark);
+    @include font-sub;
+  }
+  .footer-one {
+    grid-area: one;
+    @include tablet {
+      @include flex-layout(row, space-around, center);
+    }
+  }
+  .footer-two {
+    grid-area: two;
+  }
+  .footer-three {
+    grid-area: three;
+  }
+  .footer-four {
+    grid-area: four;
+    text-align: center;
+    @include tablet {
+      width: 60%;
+      margin: 0 auto;
+    }
+    @include desktop {
+      width: 100%;
+    }
+    .email-input {
+      @include flex-layout();
+      gap: 1rem;
+      input {
+        flex: 2;
+        padding: 0.5rem 1rem;
+      }
+      button {
+        flex: 1;
+        @include btn-style(var(--color-sub1));
+      }
+    }
+  }
+}

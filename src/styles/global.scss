@@ -1,0 +1,48 @@
+//variable
+:root {
+  --color-primary: #ffb3be;
+  --color-sub1: #c3b8ff;
+  --color-sub2: #a8cae0;
+  --color-bg: #f8eed7;
+  --color-gray: #fafafa;
+  --color-black: #333333;
+  --color-dark: #666666;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  display: block;
+  color: inherit;
+}
+
+li {
+  list-style-type: none;
+}
+
+button{
+  cursor: pointer;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  @include font-body;
+  background-color: var(--color-bg);
+}
+
+#App {
+  width: 90%;
+  @include tablet {
+    width: 96%;
+  }
+  max-width: 1440px;
+  margin: 1rem auto;
+}
